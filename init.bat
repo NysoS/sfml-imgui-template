@@ -1,4 +1,6 @@
 @echo off
+if not exist ./lib (ECHO Initialiation du dossier lib & ECHO ============================= & mkdir lib & timeout /t 5)
+
 ECHO Initializing git submodule
 ECHO =============================
 git submodule init
@@ -6,7 +8,6 @@ git submodule update
 
 ECHO Initializing vcpkg
 ECHO =============================
-if not exist ./lib mkdir lib
 cmd /c "cd lib/vcpkg && bootstrap-vcpkg.bat -disableMetrics"
 
 ECHO Initializing vcpkg packages
