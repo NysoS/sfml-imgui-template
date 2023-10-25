@@ -1,6 +1,4 @@
 @echo off
-if not exist ./lib (ECHO Initialiation du dossier lib & ECHO ============================= & mkdir lib & timeout /t 5)
-
 ECHO Initializing git submodule
 ECHO =============================
 git submodule init
