@@ -1,18 +1,12 @@
-echo off
-@set CURRENT_PATH=%CD%
-pause 
-
+@echo off
 ECHO Initializing git submodule
 ECHO =============================
 git submodule init
 git submodule update
 
-git clone https://github.com/Microsoft/vcpkg.git
-
 ECHO Initializing vcpkg
 ECHO =============================
-cmd /c "cd vcpkg && bootstrap-vcpkg.bat -disableMetrics"
-pause
+cmd /c "cd lib/vcpkg && bootstrap-vcpkg.bat -disableMetrics"
 
 ECHO Initializing vcpkg packages
 ECHO =============================
@@ -25,3 +19,7 @@ ECHO =============================
 mkdir build
 cd build
 cmake ..
+
+ECHO =============================
+ECHO Install done
+pause
