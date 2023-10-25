@@ -6,6 +6,7 @@ git submodule update
 
 ECHO Initializing vcpkg
 ECHO =============================
+if not exist ./lib mkdir lib
 cmd /c "cd lib/vcpkg && bootstrap-vcpkg.bat -disableMetrics"
 
 ECHO Initializing vcpkg packages
